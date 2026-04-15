@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --brand: #6B2723;
+  --brand-dark: #3C2A21;
+  --brand-cream: #F4E7D5;
+  --brand-beige: #D1BA9A;
+  --brand-caramel: #C07A2E;
+}
+
+html,body,#root{
+  height:100%;
+}
+
+body{
+  @apply bg-brand-cream text-brand-dark antialiased;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.container{
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.soft-card{
+  @apply bg-white/60 rounded-lg shadow-md p-6;
+}
+
+.accent-btn{
+  background: linear-gradient(180deg,var(--brand),var(--brand-dark));
+}
