@@ -23,7 +23,7 @@ export default function Navbar(){
           <Link href="#productos" className="hover:text-brand">Productos</Link>
           <Link href="#proceso" className="hover:text-brand">Proceso</Link>
           <Link href="#contacto" className="hover:text-brand">Contacto</Link>
-          <a href="https://www.facebook.com/SerenodeMontana" target="_blank" rel="noreferrer" className="hover:underline">Facebook</a>
+          <a href="https://www.facebook.com/people/Sereno-de-Montaña/61567137806365/" target="_blank" rel="noreferrer" className="hover:underline">Facebook</a>
           <a href="#productos" className="bg-brand text-white px-4 py-2 rounded-md shadow hover:brightness-95">Ordenar</a>
         </div>
 

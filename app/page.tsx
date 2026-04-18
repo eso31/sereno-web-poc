@@ -109,7 +109,7 @@ export default function Page(){
             <p className="mt-2 text-sm">Email: <a href="mailto:info@serenodemontana.example" className="text-brand underline">info@serenodemontana.example</a></p>
             <p className="mt-2 text-sm">WhatsApp: <a href="https://wa.me/" className="text-brand underline">Enviar mensaje</a></p>
             <p className="mt-4 text-sm">Visita nuestra página de Facebook para más detalles.</p>
-            <a href="https://www.facebook.com/SerenodeMontana" target="_blank" rel="noreferrer" className="mt-3 inline-block text-brand underline">Facebook</a>
+            <a href="https://www.facebook.com/people/Sereno-de-Montaña/61567137806365/" target="_blank" rel="noreferrer" className="mt-3 inline-block text-brand underline">Facebook</a>
           </div>
         </div>
       </section>
