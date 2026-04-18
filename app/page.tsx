@@ -1,17 +1,25 @@
-import heroImg from '../img/prices/Precios.jpeg'
+import ContactForm from '../components/ContactForm'
+import heroImg from '../img/Sereno de Montaña - background 4.png'
 import Image from 'next/image'
 
-export default function Page(){
+export default function Page() {
   return (
     <>
-      <section className="relative rounded-lg overflow-hidden shadow-lg" style={{backgroundImage:`url(${heroImg.src})`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
-        <div className="bg-black/45 p-16 md:p-24 text-center">
-          <h1 className="text-3xl md:text-5xl font-serif text-white drop-shadow">Café artesanal de montaña</h1>
-          <p className="mt-4 text-lg md:text-2xl text-white/90">Sabores que tocan el cielo</p>
-          <div className="mt-6 flex justify-center gap-4">
-            <a href="#productos" className="px-5 py-3 bg-brand text-white rounded-md shadow hover:brightness-95">Ver productos</a>
-            <a href="https://wa.me/" target="_blank" rel="noreferrer" className="px-5 py-3 bg-white/90 text-brand rounded-md shadow">WhatsApp</a>
-          </div>
+      <section className="relative -mx-6 overflow-hidden shadow-lg h-80 md:h-[480px]">
+        <Image
+          src={heroImg}
+          alt="Sereno de Montaña"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/45 flex flex-col items-center justify-center p-16 md:p-24 text-center">
+          <h1 className="text-white font-serif text-3xl md:text-5xl drop-shadow">
+            Sereno de Montaña
+          </h1>
+          <p className="text-white/85 mt-3 text-lg md:text-xl font-light tracking-wide drop-shadow">
+            Sabores que tocan el cielo
+          </p>
         </div>
       </section>
 
@@ -48,9 +56,6 @@ export default function Page(){
               <li>500 g — <strong>$150</strong></li>
               <li>250 g — <strong>$75</strong></li>
             </ul>
-            <div className="mt-4">
-              <a href="#contacto" className="px-4 py-2 bg-brand text-white rounded-md">Ordenar</a>
-            </div>
           </div>
 
           <div className="soft-card">
@@ -60,9 +65,6 @@ export default function Page(){
               <li>500 g — <strong>$230</strong></li>
               <li>250 g — <strong>$115</strong></li>
             </ul>
-            <div className="mt-4">
-              <a href="#contacto" className="px-4 py-2 bg-brand text-white rounded-md">Ordenar</a>
-            </div>
           </div>
 
           <div className="soft-card">
@@ -72,9 +74,6 @@ export default function Page(){
               <li>500 g — <strong>$165</strong></li>
               <li>250 g — <strong>$85</strong></li>
             </ul>
-            <div className="mt-4">
-              <a href="#contacto" className="px-4 py-2 bg-brand text-white rounded-md">Ordenar</a>
-            </div>
           </div>
         </div>
       </section>
@@ -82,27 +81,14 @@ export default function Page(){
       <section id="ubicacion" className="mt-10">
         <h2 className="text-2xl font-serif mb-4">Ubicación</h2>
         <div className="w-full rounded-md overflow-hidden shadow">
-          <iframe title="Ubicación" src="https://maps.google.com/maps?q=19.4333,-99.1333&z=10&output=embed" className="w-full h-64 border-0" />
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1611.7637249073262!2d-97.08066023451012!3d16.094431871616273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85b88bf6ca88474d%3A0x73ca17586d4a4edd!2s71970%20San%20Gabriel%20Mixtepec%2C%20Oax.!5e0!3m2!1ses!2smx!4v1776539312651!5m2!1ses!2smx" className="w-full h-64 border-0" />
         </div>
       </section>
 
       <section id="contacto" className="mt-10 mb-10">
         <h2 className="text-2xl font-serif mb-4">Contacto</h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <form className="soft-card">
-            <label className="block text-sm">Nombre</label>
-            <input className="w-full mt-2 p-2 rounded border" placeholder="Tu nombre" />
-
-            <label className="block text-sm mt-4">Email</label>
-            <input className="w-full mt-2 p-2 rounded border" placeholder="tu@correo.com" />
-
-            <label className="block text-sm mt-4">Mensaje</label>
-            <textarea className="w-full mt-2 p-2 rounded border" rows={4} placeholder="¿Qué te interesa?" />
-
-            <div className="mt-4">
-              <button type="button" className="px-4 py-2 bg-brand text-white rounded-md">Enviar</button>
-            </div>
-          </form>
+          <ContactForm />
 
           <div className="soft-card">
             <h3 className="font-semibold">Información</h3>

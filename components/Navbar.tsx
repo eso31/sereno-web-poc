@@ -2,19 +2,21 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import logoImg from '../img/logo/cafe logo.001.png'
+import logoImg from '../img/logo/cafe logo.002.png'
 
-export default function Navbar(){
+export default function Navbar() {
   return (
     <nav className="py-4 bg-transparent">
       <div className="container flex items-center justify-between">
-        <Link href="#" className="flex items-center gap-3">
-          <div className="w-12 h-12 relative rounded-full overflow-hidden">
-            <Image src={logoImg} alt="Sereno de Montaña" fill sizes="48px" className="object-cover" />
-          </div>
-          <div>
-            <div className="text-2xl font-serif text-brand">Sereno</div>
-            <div className="text-sm -mt-1 text-brand-dark">de Montaña</div>
+        <Link href="#" className="flex items-center gap-2">
+          <div className="w-28 h-28 relative">
+            <Image
+              src={logoImg}
+              alt="Sereno de Montaña"
+              fill
+              sizes="112px"
+              className="object-contain"
+            />
           </div>
         </Link>
 
