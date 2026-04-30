@@ -1,32 +1,24 @@
 "use client"
 
 import Link from 'next/link'
-import Image from 'next/image'
-import logoImg from '../img/logo/cafe logo.002.png'
 
-export default function Navbar() {
+export default function Navbar(){
   return (
     <nav className="py-4 bg-transparent">
       <div className="container flex items-center justify-between">
-        <Link href="#" className="flex items-center gap-2">
-          <div className="w-28 h-28 relative">
-            <Image
-              src={logoImg}
-              alt="Sereno de Montaña"
-              fill
-              sizes="112px"
-              className="object-contain"
-            />
+        <Link href="#" className="flex items-center gap-2 no-underline">
+          <div>
+            <div className="text-2xl font-serif text-brand leading-none">Sereno</div>
+            <div className="text-sm -mt-1 text-brand-dark">de Montaña</div>
           </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-6 text-sm">
-          <Link href="#nosotros" className="hover:text-brand">Nosotros</Link>
-          <Link href="#productos" className="hover:text-brand">Productos</Link>
-          <Link href="#proceso" className="hover:text-brand">Proceso</Link>
-          <Link href="#contacto" className="hover:text-brand">Contacto</Link>
+          <Link href="#nosotros" className="hover:text-brand transition-colors">Nosotros</Link>
+          <Link href="#productos" className="hover:text-brand transition-colors">Productos</Link>
+          <Link href="#proceso" className="hover:text-brand transition-colors">Proceso</Link>
+          <Link href="#contacto" className="hover:text-brand transition-colors">Contacto</Link>
           <a href="https://www.facebook.com/people/Sereno-de-Montaña/61567137806365/" target="_blank" rel="noreferrer" className="hover:underline">Facebook</a>
-          <a href="#productos" className="bg-brand text-white px-4 py-2 rounded-md shadow hover:brightness-95">Ordenar</a>
         </div>
 
         <div className="md:hidden">
