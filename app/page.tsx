@@ -97,12 +97,11 @@ export default function Page(){
 
       <section id="contacto" className="mt-12 mb-16">
         <h2 className="text-2xl font-serif mb-4">Contacto</h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="flex flex-col gap-6">
           <ContactForm />
 
           <div className="soft-card">
             <h3 className="font-semibold">Redes</h3>
-            <p className="mt-2 text-sm">Síguenos:</p>
             <div className="mt-3 flex items-center gap-4">
               <a href="https://www.facebook.com/people/Sereno-de-Montaña/61567137806365/" target="_blank" rel="noreferrer" className="inline-flex items-center text-brand" aria-label="Facebook">
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -110,12 +109,16 @@ export default function Page(){
                 </svg>
                 <span className="sr-only">Facebook</span>
               </a>
+            </div>
+          </div>
 
+          <div className="soft-card">
+            <h3 className="font-semibold">WhatsApp</h3>
+            <div className="mt-3 flex items-center gap-4">
               <a href={WA_LINK} target="_blank" rel="noreferrer" className="inline-flex items-center text-brand" aria-label="WhatsApp">
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20.52 3.48A11.95 11.95 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.56 4.16 1.61 5.95L0 24l6.31-1.61A11.95 11.95 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.21-1.25-6.19-3.48-8.52zM12 21.6c-1.4 0-2.78-.34-4.01-.99l-.29-.16-3.75.96.99-3.65-.19-.3A8.4 8.4 0 0 1 3.6 12c0-4.64 3.76-8.4 8.4-8.4s8.4 3.76 8.4 8.4-3.76 8.4-8.4 8.4zM17.16 14.46c-.27-.14-1.6-.79-1.85-.88-.25-.09-.44-.14-.63.14-.19.27-.75.88-.92 1.06-.17.19-.34.21-.61.07-.27-.14-1.14-.42-2.17-1.33-.8-.72-1.34-1.61-1.5-1.88-.16-.27-.02-.41.12-.54.12-.12.27-.32.41-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.02-.48-.07-.14-.63-1.52-.86-2.08-.23-.55-.47-.48-.63-.49-.16-.01-.35-.01-.54-.01-.18 0-.48.07-.74.34-.26.27-1 1-1 2.45 0 1.45 1.03 2.85 1.17 3.05.14.2 2.03 3.26 4.92 4.56 0 0 .09.04.17.04.08 0 .52.01.99-.07 1.52-.26 2.89-1.37 3.28-3.01.4-1.64-.02-2.29-.29-2.44z"/>
                 </svg>
-                <span className="sr-only">WhatsApp</span>
               </a>
             </div>
           </div>
