@@ -4,26 +4,29 @@ import ContactForm from '../components/ContactForm'
 // After running `node scripts/move-images-to-public.js` these files will be
 // copied to `/public/img` with sanitized filenames. For now the app uses the
 // expected sanitized names below. Run the script to populate `public/img`.
-const heroSrc = '/img/sereno-de-montana-background-4.png'
-const tiposSrc = '/img/tipos-de-cafe.png'
+const heroSrc = '/img/sereno-de-montana-background-4-cropped.png'
+const tiposSrc = '/img/taza-y-bolsa.png'
 
 const WA_LINK = 'https://wa.me/529541629119'
 
 export default function Page(){
   return (
     <>
-      <section className="relative rounded-lg overflow-hidden shadow-lg">
-        <div className="relative h-64 md:h-96 rounded-lg overflow-hidden">
-          <Image src={heroSrc} alt="Sereno hero" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/45 flex items-center">
-            <div className="container text-center text-white px-4">
-              <h1 className="text-3xl md:text-5xl font-serif">Sereno de Montaña</h1>
-              <p className="mt-3 text-lg md:text-xl text-white/90">Sabores que tocan el cielo</p>
+      <section className="relative overflow-hidden shadow-lg">
+        <div className="relative h-56 md:h-96 lg:h-[420px] overflow-hidden">
+          <Image src={heroSrc} alt="Sereno hero" fill priority className="object-cover transform scale-105" style={{ objectPosition: '50% 45%' }} />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/8 flex items-center md:items-end">
+            <div className="w-full flex justify-center pb-8 px-4">
+              <div className="hero-caption">
+                <h1 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight text-white drop-shadow-md font-semibold">Sereno de Montaña</h1>
+                <p className="mt-1 text-sm md:text-base text-white/90 drop-shadow-sm">Sabores que tocan el cielo</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      <div className="container py-8">
       <section id="nosotros" className="mt-12">
         <h2 className="text-2xl font-serif mb-3">Nosotros</h2>
         <p className="text-base text-brand-dark/90 max-w-3xl">Sereno de Montaña produce café 100% artesanal cultivado en altura. Trabajamos con procesos tradicionales y control de calidad en cada lote para ofrecer perfiles de tueste que resaltan notas florales, cítricas y caramelo.</p>
@@ -49,42 +52,54 @@ export default function Page(){
 
       <section id="productos" className="mt-12">
         <h2 className="text-2xl font-serif mb-6">Productos</h2>
-        <div className="relative w-full h-56 md:h-96 rounded-lg overflow-hidden mb-6 shadow-sm bg-white/5">
-          <Image src={tiposSrc} alt="Tipos de café" fill className="object-cover" />
+        <div className="container mx-auto mb-6">
+          <div className="mx-auto max-w-3xl">
+            <Image
+              src={tiposSrc}
+              alt="Tipos de café"
+              width={600}
+              height={600}
+              className="mx-auto object-contain w-auto max-h-56 md:max-h-80 lg:max-h-96 rounded-lg shadow-sm"
+              priority
+            />
+          </div>
         </div>
-        <div className="grid sm:grid-cols-3 gap-6">
-          <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-            <div className="p-5">
-              <h3 className="font-semibold text-lg">Tradicional</h3>
-              <div className="mt-3 flex flex-col gap-2">
-                <span className="px-3 py-1 bg-brand-cream text-brand-dark rounded-full text-sm">1 kg — $300</span>
-                <span className="px-3 py-1 bg-brand-beige text-brand-dark rounded-full text-sm">500 g — $150</span>
-                <span className="px-3 py-1 bg-brand-cream text-brand-dark rounded-full text-sm">250 g — $75</span>
-              </div>
+        <div className="overflow-hidden rounded-lg bg-white shadow-md">
+          <div className="p-5">
+            <h3 className="sr-only">Productos y precios</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full table-fixed text-sm products-table">
+                <thead>
+                  <tr className="text-left">
+                    <th className="p-3">Tamaño</th>
+                    <th className="p-3">Tradicional</th>
+                    <th className="p-3">Especialidad - Honey</th>
+                    <th className="p-3">Especialidad - Cerezo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t">
+                    <td className="p-3 font-medium">1 kg</td>
+                    <td className="p-3">$300</td>
+                    <td className="p-3">$450</td>
+                    <td className="p-3">$320</td>
+                  </tr>
+                  <tr className="border-t bg-white/50">
+                    <td className="p-3 font-medium">500 g</td>
+                    <td className="p-3">$150</td>
+                    <td className="p-3">$230</td>
+                    <td className="p-3">$165</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="p-3 font-medium">250 g</td>
+                    <td className="p-3">$75</td>
+                    <td className="p-3">$115</td>
+                    <td className="p-3">$85</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </article>
-
-          <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-            <div className="p-5">
-              <h3 className="font-semibold text-lg">Honey</h3>
-              <div className="mt-3 flex flex-col gap-2">
-                <span className="px-3 py-1 bg-brand-cream text-brand-dark rounded-full text-sm">1 kg — $450</span>
-                <span className="px-3 py-1 bg-brand-beige text-brand-dark rounded-full text-sm">500 g — $230</span>
-                <span className="px-3 py-1 bg-brand-cream text-brand-dark rounded-full text-sm">250 g — $115</span>
-              </div>
-            </div>
-          </article>
-
-          <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-            <div className="p-5">
-              <h3 className="font-semibold text-lg">Cerezo</h3>
-              <div className="mt-3 flex flex-col gap-2">
-                <span className="px-3 py-1 bg-brand-cream text-brand-dark rounded-full text-sm">1 kg — $320</span>
-                <span className="px-3 py-1 bg-brand-beige text-brand-dark rounded-full text-sm">500 g — $165</span>
-                <span className="px-3 py-1 bg-brand-cream text-brand-dark rounded-full text-sm">250 g — $85</span>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </section>
 
@@ -124,6 +139,7 @@ export default function Page(){
           </div>
         </div>
       </section>
+      </div>
     </>
   )
 }

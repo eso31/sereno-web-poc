@@ -70,9 +70,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-1 w-full rounded-md bg-stone-800 px-4 py-2 text-sm
-          font-medium text-white transition hover:bg-stone-700
-          disabled:opacity-50 disabled:cursor-not-allowed"
+        className="mt-1 w-full inline-flex justify-center items-center accent-btn disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === 'loading' ? 'Enviando...' : 'Enviar mensaje'}
       </button>

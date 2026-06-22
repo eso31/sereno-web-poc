@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head />
       <body className="min-h-screen bg-brand-cream text-brand-dark">
         <Navbar />
-        <div className="container py-8">{children}</div>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

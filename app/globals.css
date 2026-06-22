@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 :root{
-  --brand: #6B2723;
-  --brand-dark: #3C2A21;
-  --brand-cream: #F4E7D5;
-  --brand-beige: #D1BA9A;
-  --brand-caramel: #C07A2E;
+  --brand: #3B2F2B;
+  --brand-dark: #120F0F;
+  --brand-cream: #E6D9C9;
+  --brand-beige: #B89A82;
+  --brand-caramel: #8C5A2B;
 }
 
 html,body,#root{
@@ -30,12 +30,17 @@ body{
 }
 
 .soft-card{
-  @apply bg-white/80 rounded-lg shadow-md p-6 border border-white/30 transition-shadow;
+  @apply bg-white rounded-lg shadow-lg p-6 border border-white/20 transition-shadow;
 }
 
 .accent-btn{
-  background: linear-gradient(180deg,var(--brand),var(--brand-dark));
+  @apply inline-block text-white font-medium rounded-md px-3 py-1.5;
+  background: linear-gradient(180deg, var(--brand-caramel), #6f4823);
+  box-shadow: 0 8px 20px rgba(35,27,20,0.12);
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s;
 }
+.accent-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(35,27,20,0.16); }
+.accent-btn:active { transform: translateY(0); opacity: .95; }
 
 .product-badge{
   @apply text-sm px-3 py-1 rounded-full shadow-sm;
@@ -45,3 +50,57 @@ body{
 .focus-ring:focus{
   @apply outline-none ring-2 ring-brand/60;
 }
+
+/* Typography refinements */
+h1,h2,h3{
+  font-family: 'Playfair Display', serif;
+  color: var(--brand);
+  letter-spacing: 0.01em;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h1 { font-size: clamp(1.75rem, 3.2vw, 2.25rem); line-height: 1.05; }
+h2 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); }
+h3 { font-size: 1.05rem; }
+
+p, li, a, input, textarea, button {
+  color: rgba(18,15,15,0.95);
+}
+
+/* Hero caption */
+.hero-caption{
+  @apply rounded-md px-6 py-2 max-w-md text-center;
+  background: rgba(0,0,0,0.58);
+  color: white;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* Products table styling */
+.products-table thead th{
+  background: var(--brand-caramel);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  padding: .75rem;
+  text-align: left;
+}
+.products-table tbody tr:nth-child(even){ background: rgba(255,255,255,0.6); }
+.products-table td{ padding: .75rem; border-top: 1px solid rgba(0,0,0,0.06); }
+
+@media (max-width: 640px) {
+  .hero-caption{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 92%;
+    background: rgba(0,0,0,0.66);
+  }
+  .hero-caption h1{ font-size: 1.125rem; }
+  .hero-caption p{ font-size: .8rem; }
+  .soft-card{ padding: 1rem; }
+  .products-table thead th{ font-size: .7rem; padding: .5rem; }
+  .products-table td{ padding: .5rem; }
+  .container{ padding-left: .75rem; padding-right: .75rem; }
+}
+
