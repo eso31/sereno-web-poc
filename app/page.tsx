@@ -15,14 +15,6 @@ export default function Page(){
       <section className="relative overflow-hidden shadow-lg">
         <div className="relative h-56 md:h-96 lg:h-[420px] overflow-hidden">
           <Image src={heroSrc} alt="Sereno hero" fill priority className="object-cover transform scale-105" style={{ objectPosition: '50% 45%' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/8 flex items-center md:items-end">
-            <div className="w-full flex justify-center pb-8 px-4">
-              <div className="hero-caption">
-                <h1 className="text-3xl md:text-4xl font-serif leading-tight tracking-tight text-white drop-shadow-md font-semibold">Sereno de Montaña</h1>
-                <p className="mt-1 text-sm md:text-base text-white/90 drop-shadow-sm">Sabores que tocan el cielo</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -73,8 +65,8 @@ export default function Page(){
                   <tr className="text-left">
                     <th className="p-3">Tamaño</th>
                     <th className="p-3">Tradicional</th>
-                    <th className="p-3">Especialidad - Honey</th>
-                    <th className="p-3">Especialidad - Cerezo</th>
+                    <th className="p-3">Honey</th>
+                    <th className="p-3">Cerezo</th>
                   </tr>
                 </thead>
                 <tbody>
