@@ -6,19 +6,22 @@
 
 :root{
   --brand: #3B2F2B;
-  --brand-dark: #120F0F;
+  --brand-dark: #1E1510;
   --brand-cream: #E6D9C9;
   --brand-beige: #B89A82;
-  --brand-caramel: #8C5A2B;
+  --brand-caramel: #96622F;
 }
 
 html,body,#root{
   height:100%;
+  scroll-behavior: smooth;
 }
 
 body{
-  @apply bg-brand-cream text-brand-dark antialiased;
+  @apply text-brand-dark antialiased;
   font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, #EDE2D0 0%, #DDD0BA 100%);
+  min-height: 100vh;
 }
 
 .container{
@@ -30,7 +33,9 @@ body{
 }
 
 .soft-card{
-  @apply bg-white rounded-lg shadow-lg p-6 border border-white/20 transition-shadow;
+  @apply rounded-lg shadow-lg p-6 border transition-shadow;
+  background-color: #FAF7F2;
+  border-color: rgba(184,154,130,0.2);
 }
 
 .accent-btn{
@@ -64,8 +69,19 @@ h1 { font-size: clamp(1.75rem, 3.2vw, 2.25rem); line-height: 1.05; }
 h2 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); }
 h3 { font-size: 1.05rem; }
 
-p, li, a, input, textarea, button {
+p, li, a, input, textarea {
   color: rgba(18,15,15,0.95);
+}
+
+/* Scroll-reveal: elements start hidden and slide up */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Hero caption */
@@ -75,6 +91,14 @@ p, li, a, input, textarea, button {
   color: white;
   backdrop-filter: blur(6px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* Section heading with decorative caramel underline */
+.section-heading {
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid var(--brand-caramel);
 }
 
 /* Products table styling */

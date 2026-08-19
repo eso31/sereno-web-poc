@@ -19,9 +19,11 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    'w-full rounded-md border border-stone-200 bg-white px-3 py-2 text-sm ' +
-    'placeholder:text-stone-400 focus:outline-none focus:ring-2 ' +
-    'focus:ring-stone-300 transition'
+    'w-full rounded-md border bg-[#FAF7F2] px-3 py-2 text-sm ' +
+    'placeholder:text-brand-dark/40 focus:outline-none focus:ring-2 ' +
+    'focus:ring-brand-beige/50 transition'
+
+  const labelClass = 'block text-xs font-medium text-brand-dark/70 mb-1'
 
   if (status === 'ok') return (
     <div className="soft-card flex flex-col items-center justify-center py-10 text-center">
@@ -32,36 +34,52 @@ export default function ContactForm() {
   )
 
   return (
-    <form onSubmit={handleSubmit} className="soft-card flex flex-col gap-3">
-      <input
-        className={inputClass}
-        placeholder="Nombre *"
-        value={form.nombre}
-        onChange={e => setForm({...form, nombre: e.target.value})}
-        required
-      />
-      <input
-        className={inputClass}
-        type="email"
-        placeholder="Email *"
-        value={form.email}
-        onChange={e => setForm({...form, email: e.target.value})}
-        required
-      />
-      <input
-        className={inputClass}
-        placeholder="Teléfono (opcional)"
-        value={form.telefono}
-        onChange={e => setForm({...form, telefono: e.target.value})}
-      />
-      <textarea
-        className={inputClass}
-        placeholder="Mensaje *"
-        value={form.mensaje}
-        onChange={e => setForm({...form, mensaje: e.target.value})}
-        required
-        rows={4}
-      />
+    <form onSubmit={handleSubmit} className="soft-card flex flex-col gap-4">
+      <div>
+        <label htmlFor="nombre" className={labelClass}>Nombre *</label>
+        <input
+          id="nombre"
+          className={inputClass}
+          placeholder="Tu nombre completo"
+          value={form.nombre}
+          onChange={e => setForm({...form, nombre: e.target.value})}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="email" className={labelClass}>Correo electrónico *</label>
+        <input
+          id="email"
+          className={inputClass}
+          type="email"
+          placeholder="correo@ejemplo.com"
+          value={form.email}
+          onChange={e => setForm({...form, email: e.target.value})}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="telefono" className={labelClass}>Teléfono <span className="font-normal text-brand-dark/50">(opcional)</span></label>
+        <input
+          id="telefono"
+          className={inputClass}
+          placeholder="+52 954 000 0000"
+          value={form.telefono}
+          onChange={e => setForm({...form, telefono: e.target.value})}
+        />
+      </div>
+      <div>
+        <label htmlFor="mensaje" className={labelClass}>Mensaje *</label>
+        <textarea
+          id="mensaje"
+          className={inputClass}
+          placeholder="¿En qué podemos ayudarte?"
+          value={form.mensaje}
+          onChange={e => setForm({...form, mensaje: e.target.value})}
+          required
+          rows={4}
+        />
+      </div>
       {status === 'error' && (
         <p className="text-sm text-red-500">
           Algo salió mal, intenta de nuevo.
